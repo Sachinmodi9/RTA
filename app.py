@@ -65,6 +65,7 @@ def Predict(vehicles_involved,hour,day_of_week,vehiclesType,lanes,junction,accid
        input_df = pd.DataFrame(input_dict)
 
        prediction = model.predict(input_df)
+       
        return prediction
 
 if __name__ == '__main__':
