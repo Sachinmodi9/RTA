@@ -44,7 +44,7 @@ def main():
 
        if submit:
               prediction = Predict(vehicles_involved,hour,day_of_week,vehiclesType,lanes,junction,accident_cause)
-              st.write("Prediction:", prediction)
+              st.write(f"Accident Severity should be {prediction[0]}")
 
 
 def Predict(vehicles_involved,hour,day_of_week,vehiclesType,lanes,junction,accident_cause):
@@ -66,7 +66,7 @@ def Predict(vehicles_involved,hour,day_of_week,vehiclesType,lanes,junction,accid
 
        prediction = model.predict(input_df)
        
-       return prediction
+       return np.array(prediction)
 
 if __name__ == '__main__':
     main()
